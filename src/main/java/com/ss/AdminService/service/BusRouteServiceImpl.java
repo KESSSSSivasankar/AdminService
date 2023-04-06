@@ -78,4 +78,10 @@ public class BusRouteServiceImpl implements BusRouteService {
 	              .get();
 	}
 
+	@Override
+	public BusRoute fetchBusRoutes(String busSrc, String busDest) throws RouteNotFoundException {
+
+		return  busRouteRepository.findByBusSourceAndBusDestination(busSrc,busDest);
+	}
+
 }

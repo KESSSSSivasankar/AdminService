@@ -16,6 +16,9 @@ public interface BusRouteService {
     
     // Read operation
     BusRoute fetchBusRoute(Long routeId) throws RouteNotFoundException;
+    
+ // Read operation
+    BusRoute fetchBusRoutes(String busSrc, String busDest) throws RouteNotFoundException;
  
     // Update operation
     BusRoute updateBusRoute(BusRoute route,

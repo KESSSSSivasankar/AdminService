@@ -41,6 +41,13 @@ public class BusRouteContoller {
 			   HttpStatus.OK);
 	}  
 	
+	@GetMapping("/busroutes/{busroutesource}/{busroutedest}")  
+	private ResponseEntity<BusRoute> getBusroutesId(@PathVariable("busroutesource") String busroutesource, @PathVariable("busroutedest") String busroutedest) throws RouteNotFoundException  
+	{  
+	return new ResponseEntity<>(busRouteService.fetchBusRoutes(busroutesource, busroutedest), 
+			   HttpStatus.OK);
+	} 
+	
 	@DeleteMapping("/busroutes/{busroutesid}")  
 	private ResponseEntity<String> deleteBook(@PathVariable("busroutesid") long busroutesid)  throws RouteNotFoundException 
 	{  
